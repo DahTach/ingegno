@@ -1,2 +1,2 @@
-# ingegno
-Ingegno projects and developers showcase
+# Ingegno
+Webpage of Ingegno group to show projects' portfolio and developers bios.
