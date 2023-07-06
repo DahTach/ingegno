@@ -1,0 +1,12 @@
+[tool.black]
+line-length = 88 #https://www.youtube.com/watch?v=wf-BqAjZb8M&t=260s
+target-version = ['py310']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # The following are specific to Black, you probably don't want those.
+  | blib2to3
+  | tests/data
+  | profiling
+)/
+'''

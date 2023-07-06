@@ -2,6 +2,9 @@
 
 version: '3'
 
+vars:
+  DIR_ENV: .venv
+
 tasks:
   hello:
     cmds:
@@ -9,19 +12,30 @@ tasks:
     silent: true
 
   build:
-    desc: build 
+    desc: build
     cmds:
-      - docker compose build 
+      - docker compose build
 
   start:
     desc: start
     cmds:
       - docker compose up
 
-  venv:
-    desc: virtualenv
-    cmds: 
+  venv:init:
+    desc: "create venv and install mandatory packages"
+    cmds:
       - |
-        python -m venv .venv
-        source .venv/bin/activate
-        # pip install 
+        if [ -d  {{.DIR_ENV}} ]; then
+          echo "{{.DIR_ENV}} is already present"
+          source .venv/bin/activate
+          pip install --upgrade pip black mypy pre-commit
+        else
+          python3 -m venv {{.DIR_ENV}}
+          source .venv/bin/activate
+          pip install --upgrade pip black mypy pre-commit
+        fi
+
+  git:hooks:
+    desc: "install pre-commit"
+    cmds:
+      - pre-commit install --hook-type pre-commit --hook-type pre-merge-commit --hook-type post-merge

@@ -1,0 +1,65 @@
+{
+	"folders": [
+		{ "path": "./" }
+	],
+    "settings": {
+        //---> python settings
+        "[python]": {
+            "editor.defaultFormatter": "ms-python.black-formatter",
+            "editor.formatOnSave": false
+        },
+      	// define config for black
+        //"black-formatter.args": ["--config", "./backend/pyproject.black.toml"],
+        "python.terminal.activateEnvInCurrentTerminal": true,
+        "python.formatting.provider": "black",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": false,
+        "python.linting.mypyEnabled": true,
+        "python.linting.mypyCategorySeverity.error":"Warning",
+        "python.linting.mypyArgs": [
+            "--ignore-missing-imports",
+            "--follow-imports=silent",
+            "--show-column-numbers",
+            "--disallow-untyped-calls",
+            "--plugins=sqlmypy"
+        ],
+        "python.analysis.typeCheckingMode": "off",
+        //<---
+        //---> General editor
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false,
+        //<---
+        "[docker]": {
+            "editor.defaultFormatter": "ms-azuretools.vscode-docker",
+        },
+        //---> Rainbow CSV
+        "files.associations": {
+            "*.dat": "csv (pipe)",
+            "*.csv": "csv (semicolon)"
+        },
+        //<---
+        //---> Custom color (white and green)k
+        "workbench.colorCustomizations": {
+            "editor.lineHighlightBackground": "#00529e36",
+            "editor.lineHighlightBorder": "#9facd11f",
+            "activityBar.activeBackground": "#01aa0a",
+            "activityBar.background": "#01aa0a",
+            "activityBar.foreground": "#e7e7e7",
+            "activityBar.inactiveForeground": "#e7e7e799",
+            "activityBarBadge.background": "#ee90bb",
+            "activityBarBadge.foreground": "#15202b",
+            "commandCenter.border": "#e7e7e799",
+            "sash.hoverBorder": "#cfcfcfc5",
+            "statusBar.background": "#ffffff",
+            "statusBar.foreground": "#01aa0a",
+            "statusBarItem.hoverBackground": "#cfcfcfc5",
+            "statusBarItem.remoteBackground": "#ffffff",
+            "statusBarItem.remoteForeground": "#074d0b",
+            "titleBar.activeBackground": "#cfcfcfc5",
+            "titleBar.activeForeground": "#e7e7e7",
+            "titleBar.inactiveBackground": "#cfcfcfc5",
+            "titleBar.inactiveForeground": "#e7e7e799"
+        }
+    }
+}
