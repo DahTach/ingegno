@@ -12,6 +12,7 @@
         "leodevbro.blockman", // to show blocks
         "ms-python.black-formatter", // python formatter
         "mechatroner.rainbow-csv",
+        "DavidAnson.vscode-markdownlint", // for the markdown rendering
         "esbenp.prettier-vscode"// javascript & typescript & yaml/toml formatter
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
