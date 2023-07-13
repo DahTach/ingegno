@@ -1,0 +1,24 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  hello:
+    cmds:
+      - echo 'Hello World from Task!'
+    silent: true
+
+  build:
+    desc: build
+    cmds:
+      - docker compose build
+
+  start:
+    desc: start
+    cmds:
+      - docker compose up
+
+  init:
+    desc: init a new project
+    cmds:
+      - ng new web-ingegno

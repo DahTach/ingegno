@@ -1,0 +1,15 @@
+version: "3"
+name: "frontend"
+
+services:
+  web:
+    image: ingegno/dev/web
+    command: sh -c "ng serve --host 0.0.0.0"
+    build:
+      context: ./web-ingegno
+    volumes:
+      - ./www:/app/www
+    ports:
+      - 4200:4200
+    environment:
+      NODE_ENV: development
