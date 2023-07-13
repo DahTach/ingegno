@@ -29,6 +29,7 @@
         "editor.tabSize": 4,
         "editor.insertSpaces": true,
         "editor.detectIndentation": false,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
         //<---
         "[docker]": {
             "editor.defaultFormatter": "ms-azuretools.vscode-docker",
