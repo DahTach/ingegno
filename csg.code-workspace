@@ -9,7 +9,7 @@
             "editor.formatOnSave": false
         },
       	// define config for black
-        //"black-formatter.args": ["--config", "./backend/pyproject.black.toml"],
+        "black-formatter.args": ["--config", "./backend/pyproject.black.toml"],
         "python.terminal.activateEnvInCurrentTerminal": true,
         "python.formatting.provider": "black",
         "python.linting.enabled": true,
@@ -62,5 +62,6 @@
             "titleBar.inactiveBackground": "#cfcfcfc5",
             "titleBar.inactiveForeground": "#e7e7e799"
         }
-    }
+    },
+
 }
