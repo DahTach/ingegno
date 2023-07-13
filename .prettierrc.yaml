@@ -1,0 +1,44 @@
+# Prettier intentionally doesn’t support any kind of global configuration. 
+
+# The only options that can be changed in the configuration file are:
+# for more explanations and examples refer to: https://prettier.io/docs/en/options.html
+
+trailingComma: # all | es5 | none - Print trailing commas wherever possible in multi-line comma-separated syntactic structures.
+tabWidth: # int - Specify the number of spaces per indentation-level
+semi: false # bool - Print semicolons at the ends of statements
+singleQuote: true # bool - Use single quotes instead of double quotes
+
+quoteProps: # as-needed | consistent | preserve - Change when properties in objects are quoted
+printWidth: # int - Specify the line length that the printer will wrap on.
+useTabs: # bool - Indent lines with tabs instead of spaces
+jsxSingleQuote: # bool - Use single quotes instead of double quotes in JSX
+bracketSpacing: # bool - Print spaces between brackets in object literals.
+bracketSameLine: # bool - Put the > of a multi-line HTML (HTML, JSX, Vue, Angular) element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
+arrowParens: always # always | avoid - Include parentheses around a sole arrow function parameter
+rangeStart: 0 # int - Format only a segment of a file
+rangeEnd: Infinity # int - Format only a segment of a file
+parser: # string - Specify which parser to use
+
+
+# Configuration Overrides for specific formats:
+semi: false
+overrides:
+  - files: "*.test.js" #files is required for each override (string or array of strings)
+    options:
+      semi: true
+  - files:
+      - "*.html"
+      - "legacy/**/*.js"
+    options:
+      tabWidth: 4
+  - excludeFiles: "" #optional
+
+
+
+# You can also add a parser to format files prettier does not recognize:
+# Note: NEVER put the parser option at the top level of your configuration, ONLY use it inside overrides
+
+overrides:
+    - files: ".prettierrc"
+      options:
+        parser: "json"
