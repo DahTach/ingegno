@@ -8,7 +8,8 @@ services:
     build:
       context: ./web-ingegno
     volumes:
-      - ./www:/app/www
+      - ./web-ingegno/www:/app/www
+      - ./web-ingegno/src:/app/src
     ports:
       - 4200:4200
     environment:
