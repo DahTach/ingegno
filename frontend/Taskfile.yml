@@ -22,3 +22,8 @@ tasks:
     desc: init a new project
     cmds:
       - ng new web-ingegno
+
+  cli:
+    desc: build
+    cmds:
+      - docker compose run --rm web sh

@@ -1,7 +1,9 @@
 {
 	"folders": [
-		{ "path": "./" }
-	],
+        {
+            "path": "frontend/web-ingegno"
+        }
+    ],
     "settings": {
         //---> python settings
         "[python]": {
