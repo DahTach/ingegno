@@ -7,7 +7,7 @@ import { CubeComponent } from "./components/cube/cube.component";
 import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
-  declarations: [AppComponent, TestPageComponent, CubeComponent],
+  declarations: [AppComponent, CubeComponent, TestPageComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

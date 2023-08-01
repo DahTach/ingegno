@@ -1,11 +1,1 @@
-<ngt-mesh
-  [position]="position"
-  [scale]="active ? 1.5 : 1"
-  (click)="active = !active"
-  (pointerover)="hovered = true"
-  (pointerout)="hovered = false"
-  (beforeRender)="onBeforeRender($any($event).object)"
->
-  <ngt-box-geometry />
-  <ngt-mesh-standard-material [color]="hovered ? 'darkred' : 'orange'" />
-</ngt-mesh>
+<canvas #canvas id="canvas" style="height: 100%; width: 100%"></canvas>
