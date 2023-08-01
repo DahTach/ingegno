@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 2%;
+}
+
+app-root {
+  height: 100%;
+  width: 100%;
+}
+
+$transitionTime: 0.15s;
+$transitionStyle: ease-in-out;
+body {
+  transition:
+    color $transitionTime $transitionStyle,
+    background $transitionTime $transitionStyle;
+}
