@@ -17,21 +17,21 @@ export class CanvasBoxComponent implements OnInit {
         // we create our scene, material and two types of lights to place in our scene!
         const scene = new THREE.Scene();
 
-        const material = new THREE.MeshToonMaterial();
+        const material = new THREE.MeshLambertMaterial();
     
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
         scene.add(ambientLight);
     
-        const pointLight = new THREE.PointLight(0xffffff, 1);
-        pointLight.position.x = 0;
-        pointLight.position.y = 0;
-        pointLight.position.z = 0;
+        const pointLight = new THREE.PointLight(0xffffff, 10);
+        pointLight.position.x = 2;
+        pointLight.position.y = 2;
+        pointLight.position.z = 2;
         scene.add(pointLight);
 
-        const pointLight2 = new THREE.PointLight(0xffffff, 1);
-        pointLight2.position.x = 4;
-        pointLight2.position.y = 4;
-        pointLight2.position.z = 4;
+        const pointLight2 = new THREE.PointLight(0xffffff, 10);
+        pointLight2.position.x = 6;
+        pointLight2.position.y = 6;
+        pointLight2.position.z = 6;
         scene.add(pointLight2);
 
         // we create two 3D geometries and add it to our scene
