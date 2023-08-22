@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 import { TestPageComponent } from "./pages/test-page/test-page.component";
+import { HomeComponent } from "./pages/home/home.component";
 
-const routes: Routes = [{ path: "", component: TestPageComponent }];
+const routes: Routes = [{ path: "", component: HomeComponent }];
 
 @NgModule({
   declarations: [],
