@@ -13,7 +13,7 @@ export class RoomComponent implements OnInit {
        }
       
        createThreeJsRoom(): void {
-           const canvas = document.getElementById('canvas-box');
+           const canvas = document.getElementById('logo-box');
    
            // we create our scene, material and two types of lights to place in our scene!
            const scene = new THREE.Scene();

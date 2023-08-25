@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CanvasBoxComponent } from './canvas-box.component';
+import { CanvasBoxComponent } from './logo-box.component';
 
 describe('CanvasBoxComponent', () => {
   let component: CanvasBoxComponent;

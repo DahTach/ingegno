@@ -6,7 +6,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ThreeComponent } from './pages/three/three.component';
-import { CanvasBoxComponent } from './components/canvas-box/canvas-box.component';
+import { CanvasBoxComponent } from './components/logo-box/logo-box.component';
 import { RoomComponent } from './components/room/room.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';

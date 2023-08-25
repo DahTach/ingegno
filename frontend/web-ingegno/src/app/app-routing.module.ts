@@ -8,7 +8,6 @@ import { RoomComponent } from './components/room/room.component';
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
-    { path: 'three', component: ThreeComponent },
     { path: 'room', component: RoomComponent },
     { path: '**', component: PageNotFoundComponent }
 ]; // sets up routes constant where you define your routes

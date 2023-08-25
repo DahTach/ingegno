@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import * as THREE from 'three';
 
 @Component({
-  selector: 'app-canvas-box',
-  templateUrl: './canvas-box.component.html',
-  styleUrls: ['./canvas-box.component.scss']
+  selector: 'app-logo-box',
+  templateUrl: './logo-box.component.html',
+  styleUrls: ['./logo-box.component.scss']
 })
 export class CanvasBoxComponent implements OnInit {
     ngOnInit(): void {
@@ -12,31 +12,35 @@ export class CanvasBoxComponent implements OnInit {
     }
    
     createThreeJsBox(): void {
-        const canvas = document.getElementById('canvas-box');
+        const canvas = document.getElementById('logo-box');
 
-        // we create our scene, material and two types of lights to place in our scene!
+        // we create our scene ...
         const scene = new THREE.Scene();
 
-        const material = new THREE.MeshLambertMaterial();
-    
+        // ... the material ...
+        //const material = new THREE.MeshLambertMaterial();
+        var texture = new THREE.TextureLoader().load( "./assets/img/photo_5873190219493260807_c.jpg");
+        var material = new THREE.MeshBasicMaterial( { map: texture } );
+
+        // ... the ambient light ...
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
-        scene.add(ambientLight);
-    
+        scene.add(ambientLight);    
+
+        // ... and two additional lights
         const pointLight = new THREE.PointLight(0xffffff, 10);
         pointLight.position.x = 2;
         pointLight.position.y = 2;
         pointLight.position.z = 2;
-        scene.add(pointLight);
-
-        const pointLight2 = new THREE.PointLight(0xffffff, 10);
-        pointLight2.position.x = 6;
-        pointLight2.position.y = 6;
-        pointLight2.position.z = 6;
+//        scene.add(pointLight);
+        const pointLight2 = new THREE.PointLight(0xffffff, 100);
+        pointLight2.position.x = 10;
+        pointLight2.position.y = 10;
+        pointLight2.position.z = 10;
         scene.add(pointLight2);
 
         // we create two 3D geometries and add it to our scene
         const box = new THREE.Mesh(
-            new THREE.BoxGeometry(1.5, 1.5, 1.5), 
+            new THREE.BoxGeometry(13, 13, 13), 
             material
         );
     
@@ -45,14 +49,14 @@ export class CanvasBoxComponent implements OnInit {
            material
         );
     
-        scene.add(torus, box);
+        scene.add(box);
 
-        // we declare the screen sizes, create the camera and renderer!
+        // we declare the screen sizes ...
         const canvasSizes = {
            width: window.innerWidth,
            height: window.innerHeight,
         };
-    
+        // ... create the camera ...
         const camera = new THREE.PerspectiveCamera(
            75,
            canvasSizes.width / canvasSizes.height,
@@ -64,15 +68,25 @@ export class CanvasBoxComponent implements OnInit {
         scene.add(camera);
     
         if (!canvas) {
-           return;
+            console.warn("missing canvas object")
+            return;
         }
-    
+        // ... and the render
         const renderer = new THREE.WebGLRenderer({
            canvas: canvas,
         });
-        renderer.setClearColor(0xe232222, 1);
+        renderer.setClearColor(0x333F47, 1);
         renderer.setSize(canvasSizes.width, canvasSizes.height);
 
+        // Create an event listener that resizes the renderer with the browser window.
+        window.addEventListener('resize', function() {
+            var WIDTH = window.innerWidth,
+                HEIGHT = window.innerHeight;
+            renderer.setSize(WIDTH, HEIGHT);
+            camera.aspect = WIDTH / HEIGHT;
+            camera.updateProjectionMatrix();
+        });
+        
         // we animate our 3D geometries and make the scene cooler!
         const clock = new THREE.Clock();
 
