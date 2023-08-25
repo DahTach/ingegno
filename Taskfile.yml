@@ -5,21 +5,16 @@ version: '3'
 vars:
   DIR_ENV: .venv
 
+includes:
+  frontend: 
+    taskfile: ./frontend/Taskfile.yml
+    dir: ./frontend
+
 tasks:
   hello:
     cmds:
-      - echo 'Hello World from Task!'
+      - echo 'Hello Crew! Wellcome in Ingegno!'
     silent: true
-
-  build:
-    desc: build
-    cmds:
-      - docker compose build
-
-  start:
-    desc: start
-    cmds:
-      - docker compose up
 
   venv:init:
     desc: "create venv and install mandatory packages"

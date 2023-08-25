@@ -25,9 +25,11 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TeamComponent } from './pages/team/team.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PageNotFoundComponent, CanvasBoxComponent, RoomComponent, HeaderComponent, FooterComponent],
+  declarations: [AppComponent, HomeComponent, PageNotFoundComponent, CanvasBoxComponent, RoomComponent, HeaderComponent, FooterComponent, TeamComponent, ProfileComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
