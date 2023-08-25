@@ -13,6 +13,7 @@ export class CanvasBoxComponent implements OnInit {
    
     createThreeJsBox(): void {
         const canvas = document.getElementById('logo-box');
+        const scaleHeight = 0.8;
 
         // we create our scene ...
         const scene = new THREE.Scene();
@@ -54,7 +55,7 @@ export class CanvasBoxComponent implements OnInit {
         // we declare the screen sizes ...
         const canvasSizes = {
            width: window.innerWidth,
-           height: window.innerHeight,
+           height: window.innerHeight * scaleHeight,
         };
         // ... create the camera ...
         const camera = new THREE.PerspectiveCamera(
@@ -76,12 +77,12 @@ export class CanvasBoxComponent implements OnInit {
            canvas: canvas,
         });
         renderer.setClearColor(0x333F47, 1);
-        renderer.setSize(canvasSizes.width, canvasSizes.height);
+        renderer.setSize(canvasSizes.width, window.innerHeight * scaleHeight);
 
         // Create an event listener that resizes the renderer with the browser window.
         window.addEventListener('resize', function() {
             var WIDTH = window.innerWidth,
-                HEIGHT = window.innerHeight;
+                HEIGHT = window.innerHeight * scaleHeight;
             renderer.setSize(WIDTH, HEIGHT);
             camera.aspect = WIDTH / HEIGHT;
             camera.updateProjectionMatrix();
