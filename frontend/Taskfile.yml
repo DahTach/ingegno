@@ -27,3 +27,9 @@ tasks:
     desc: build
     cmds:
       - docker compose run --rm web sh
+
+  compile:
+    desc: compile for production
+    cmds:
+      - sudo rm -fR ./web-ingegno/www
+      - docker run --rm -v ./web-ingegno/src:/app/src -v ./web-ingegno/www:/app/www ingegno/dev/web ./build.sh
