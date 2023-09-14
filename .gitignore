@@ -3,3 +3,5 @@
 .vscode
 # python
 .venv
+# DS Store
+.DS_Store
